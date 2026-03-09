@@ -1,0 +1,75 @@
+{
+  "name": "Morning Peak",
+  "description": "North-south corridor is saturated while east-west remains moderate.",
+  "profiles": [
+    {
+      "lane_id": "north",
+      "segments": [
+        {
+          "start_s": 0,
+          "end_s": 150,
+          "arrival_rate_vph": 980
+        },
+        {
+          "start_s": 150,
+          "end_s": 300,
+          "arrival_rate_vph": 860
+        }
+      ]
+    },
+    {
+      "lane_id": "south",
+      "segments": [
+        {
+          "start_s": 0,
+          "end_s": 150,
+          "arrival_rate_vph": 940
+        },
+        {
+          "start_s": 150,
+          "end_s": 300,
+          "arrival_rate_vph": 820
+        }
+      ]
+    },
+    {
+      "lane_id": "east",
+      "segments": [
+        {
+          "start_s": 0,
+          "end_s": 150,
+          "arrival_rate_vph": 320
+        },
+        {
+          "start_s": 150,
+          "end_s": 300,
+          "arrival_rate_vph": 410
+        }
+      ]
+    },
+    {
+      "lane_id": "west",
+      "segments": [
+        {
+          "start_s": 0,
+          "end_s": 150,
+          "arrival_rate_vph": 300
+        },
+        {
+          "start_s": 150,
+          "end_s": 300,
+          "arrival_rate_vph": 380
+        }
+      ]
+    }
+  ],
+  "config": {
+    "duration_s": 300,
+    "random_seed": 42,
+    "sample_step_s": 5,
+    "saturation_flow_vps": 0.65,
+    "queue_capacity": 35,
+    "baseline_fixed_green_s": 24,
+    "idle_fuel_lph": 0.8
+  }
+}

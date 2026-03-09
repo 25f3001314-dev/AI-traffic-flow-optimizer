@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traffic Optimizer Pro</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">India Innovate Hackathon Build</p>
+          <h1>Traffic Optimizer Pro</h1>
+          <p class="hero-copy">
+            Adaptive signal control for smart Indian intersections with simulation,
+            dashboard analytics, and computer vision lane-density estimation.
+          </p>
+        </div>
+        <div class="hero-badges">
+          <span class="badge">Adaptive Control</span>
+          <span class="badge">Computer Vision</span>
+          <span class="badge">FastAPI + UI</span>
+        </div>
+      </header>
+
+      <section class="toolbar card">
+        <div class="toolbar-group">
+          <label for="presetSelect">Scenario preset</label>
+          <select id="presetSelect"></select>
+        </div>
+        <div class="toolbar-actions">
+          <button id="runScenarioBtn" class="primary">Run baseline vs adaptive</button>
+          <button id="sampleVisionBtn">Analyze bundled demo video</button>
+        </div>
+        <div class="toolbar-group upload-group">
+          <label for="videoUpload">Upload overhead traffic video</label>
+          <input id="videoUpload" type="file" accept="video/*" />
+          <button id="uploadVisionBtn">Analyze uploaded video</button>
+        </div>
+      </section>
+
+      <section class="status-strip card">
+        <div>
+          <span class="status-label">API</span>
+          <strong id="healthStatus">Checking...</strong>
+        </div>
+        <div>
+          <span class="status-label">Current scenario</span>
+          <strong id="scenarioName">Not loaded</strong>
+        </div>
+        <div>
+          <span class="status-label">Message</span>
+          <strong id="statusMessage">Ready</strong>
+        </div>
+      </section>
+
+      <main class="dashboard-grid">
+        <section class="card span-2">
+          <div class="card-header">
+            <h2>Animated intersection</h2>
+            <p>Adaptive controller timeline</p>
+          </div>
+          <canvas id="junctionCanvas" width="960" height="540"></canvas>
+        </section>
+
+        <section class="card metrics-panel">
+          <div class="card-header">
+            <h2>Impact summary</h2>
+            <p>Adaptive vs fixed time</p>
+          </div>
+          <div class="metric-grid">
+            <article class="metric-card">
+              <span class="metric-label">Wait time reduction</span>
+              <strong id="waitReduction">-</strong>
+              <small id="waitDetail">-</small>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label">Throughput improvement</span>
+              <strong id="throughputImprovement">-</strong>
+              <small id="throughputDetail">-</small>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label">Max queue reduction</span>
+              <strong id="queueReduction">-</strong>
+              <small id="queueDetail">-</small>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label">CO2 reduction</span>
+              <strong id="co2Reduction">-</strong>
+              <small id="co2Detail">-</small>
+            </article>
+          </div>
+        </section>
+
+        <section class="card span-2">
+          <div class="card-header">
+            <h2>Comparison chart</h2>
+            <p>Baseline vs adaptive metrics</p>
+          </div>
+          <canvas id="comparisonChart" width="960" height="320"></canvas>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <h2>Adaptive decision log</h2>
+            <p>Latest phase choices</p>
+          </div>
+          <div id="decisionList" class="decision-list"></div>
+        </section>
+
+        <section class="card span-2">
+          <div class="card-header">
+            <h2>Queue timeline</h2>
+            <p>Total queued vehicles over time</p>
+          </div>
+          <canvas id="queueChart" width="960" height="300"></canvas>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <h2>Vision analysis</h2>
+            <p>Bundled or uploaded video</p>
+          </div>
+          <div class="vision-summary" id="visionSummary">
+            <p>Run a video analysis to see lane counts and density.</p>
+          </div>
+          <canvas id="visionChart" width="420" height="260"></canvas>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

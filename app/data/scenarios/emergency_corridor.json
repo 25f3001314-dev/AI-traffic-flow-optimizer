@@ -1,0 +1,56 @@
+{
+  "name": "Emergency Corridor",
+  "description": "Northbound emergency probability is elevated and should trigger priority.",
+  "profiles": [
+    {
+      "lane_id": "north",
+      "segments": [
+        {
+          "start_s": 0,
+          "end_s": 300,
+          "arrival_rate_vph": 740,
+          "emergency_probability": 0.02
+        }
+      ]
+    },
+    {
+      "lane_id": "south",
+      "segments": [
+        {
+          "start_s": 0,
+          "end_s": 300,
+          "arrival_rate_vph": 620
+        }
+      ]
+    },
+    {
+      "lane_id": "east",
+      "segments": [
+        {
+          "start_s": 0,
+          "end_s": 300,
+          "arrival_rate_vph": 380
+        }
+      ]
+    },
+    {
+      "lane_id": "west",
+      "segments": [
+        {
+          "start_s": 0,
+          "end_s": 300,
+          "arrival_rate_vph": 420
+        }
+      ]
+    }
+  ],
+  "config": {
+    "duration_s": 300,
+    "random_seed": 7,
+    "sample_step_s": 5,
+    "saturation_flow_vps": 0.65,
+    "queue_capacity": 35,
+    "baseline_fixed_green_s": 24,
+    "idle_fuel_lph": 0.8
+  }
+}

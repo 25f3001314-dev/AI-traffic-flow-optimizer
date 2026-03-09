@@ -1,0 +1,9 @@
+services:
+  traffic-optimizer:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      APP_NAME: Traffic Optimizer Pro
+      HOST: 0.0.0.0
+      PORT: 8000
